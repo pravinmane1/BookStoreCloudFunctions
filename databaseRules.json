@@ -1,0 +1,204 @@
+{
+  "rules": {
+    ".read": "auth.uid == '2sJXHaheQ9fHCKwJAaV4WOqsQXt1' || auth.uid == 'rYOzQsX8VkPZb2VGYy5qfskSvEp2'",
+      ".write": "auth.uid == '2sJXHaheQ9fHCKwJAaV4WOqsQXt1'|| auth.uid == 'rYOzQsX8VkPZb2VGYy5qfskSvEp2'",
+  "Addresses": {
+    "$uid": {
+        ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true",
+        ".write": " $uid == auth.uid && root.child('Permissions').child($uid).val() === true"
+      }
+  },
+    "Banners": {
+      ".read": "auth != null"
+    },
+    "BannerUpdate": {
+      ".read": "auth != null"
+    },
+      
+      "BooksLocations": {
+      ".read": "auth != null && root.child('Permissions').child(auth.uid).val() === true "
+    },
+      "SPPUbooksTemplates": {
+      ".read": "auth != null && root.child('Permissions').child(auth.uid).val() === true "
+      }, 
+    "Cart": {
+      "$uid": {
+        ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true"
+      }
+    },
+    "CartReq": {
+      "$uid": {
+        ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true",
+        ".write": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true"
+      }
+    },
+      "Chats": {
+        "OrderChats": {
+          "$uid": {
+              ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true",
+        ".write": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true"
+          }
+        }
+      },
+      
+    "CheckCount": {
+      "$uid": {
+        ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true ",
+     ".write": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true && (auth.token.firebase.identities['phone']!=null)"
+      }
+    },
+      
+    "CheckId": {
+      ".read": "auth != null",
+      "$uid": {
+        ".write": "auth.uid == $uid && !data.exists()"
+      }
+    },
+    "SPPUcodes": {
+      ".read": "auth != null && root.child('Permissions').child(auth.uid).val() === true "
+    },
+    	"Courses":{
+    	".read": true
+    	},
+     "CountData": {
+      "$uid": {
+        ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true",
+        ".write": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true"
+      }
+    },
+    "CurrentSem":{
+      	".read": "auth != null"
+    },
+    "Delivery": {
+      ".read": "auth != null && root.child('Permissions').child(auth.uid).val() === true"
+    },
+      "HomeMenu": {
+        ".read":true
+      },
+        "HomeCoursesList": {
+        ".read":true
+      },
+        "YouMayAlsoLikeMenu": {
+        ".read":true
+      },
+        
+    "LoginInfo": {
+       "$uid": {
+        ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true",
+        ".write": " $uid == auth.uid && root.child('Permissions').child($uid).val() === true"
+      }
+    },
+      "OrderPlaceFailed": {
+    "$uid": {
+        ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true",
+        ".write": " $uid == auth.uid && root.child('Permissions').child($uid).val() === true"
+      }
+  },
+      "PaymentResolution": {
+        "$uid" :{
+      ".write": "$uid == auth.uid"
+          }
+      },
+      "PaymentResolutionTime": {
+      ".read": "auth != null"
+      },
+    "PayTarget": {
+      ".read": "auth != null"
+    },
+     "ReturnEnablement": {
+      ".read": "auth != null"
+    },
+       "ReturnPreference": {
+      "$uid" :{
+        ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true ",
+        ".write": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true "
+      }
+       },
+    "SearchIndex":{
+      ".read": "auth != null"
+    },
+    "Slider": {
+      ".read" : "auth != null"
+    },
+    "SPPUbooks": {
+      ".read": "auth != null && root.child('Permissions').child(auth.uid).val() === true"
+    },
+    "SPPUbooksListing": {
+      ".read": "auth != null && root.child('Permissions').child(auth.uid).val() === true "
+    },
+    "SPPUtermsListing": {
+      ".read": "auth != null && root.child('Permissions').child(auth.uid).val() === true "
+    },  
+    "SPPUstationary": {
+    ".read": "auth != null"
+  },
+    "SPPUstationaryListing": {
+    ".read": "auth != null"
+  },
+    "Intro": {
+      ".read": "auth != null && root.child('Permissions').child(auth.uid).val() === true "
+    },
+    "OrderReq": {
+      "$uid" :{
+        ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true && (auth.token.firebase.identities['phone']!=null)",
+        ".write": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true && (auth.token.firebase.identities['phone']!=null)"
+      }
+       },
+    "PriceDetails": {
+      "$uid": {
+        ".read": "$uid == auth.uid "
+      }
+    },
+    "RequestedBooks": {
+      "$uid": {
+        ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true",
+        ".write": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true"
+      }
+    },
+      "UpiConfirmation":{
+        "$uid": {
+          "$oid":{
+             ".write": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true && (auth.token.firebase.identities['phone']!=null) && !data.exists()"      
+          }
+        }
+      },
+    "Users": {
+      "$uid": {
+        ".read": "($uid == auth.uid && root.child('Permissions').child($uid).val() === true)",
+        ".write": " $uid == auth.uid && newData.exists()"
+      }
+    },
+      "UserOrderOutOfStock": {
+      "$uid": {
+        ".read": "$uid == auth.uid "
+      }
+    },
+      "UserOrders": {
+      "$uid": {
+        ".read": "$uid == auth.uid ",
+        "$oid": {
+          "userViewed": {
+           	".write": "$uid == auth.uid"
+          } ,
+          "orderCancelRequest": {
+            ".write": "$uid == auth.uid"
+          } ,
+            "paymentResolution": {
+            ".write": "$uid == auth.uid"
+            }
+        }
+      }
+    },
+       "UserOrdersThumb": {
+      "$uid": {
+        ".read": "$uid == auth.uid ",
+      }
+    },
+    "Wishlist": {
+      "$uid": {
+        ".read": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true",
+        ".write": "$uid == auth.uid && root.child('Permissions').child($uid).val() === true"
+      }
+    }
+  }
+}

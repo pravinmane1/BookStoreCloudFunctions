@@ -1,0 +1,13 @@
+service firebase.storage {
+    match /b/{bucket}/o {
+      match /{allPaths=**} {
+        allow read: if request.auth.uid!=null;
+      allow write: if request.auth.uid == '2sJXHaheQ9fHCKwJAaV4WOqsQXt1';
+      }
+        match /transactions/ {allPaths=**} {
+        allow read: if request.auth.uid!=null;
+      allow write: if request.auth.uid!=null;
+      }
+    }
+  }
+  
